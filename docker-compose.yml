@@ -1,0 +1,18 @@
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+     - "8080:80"
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+     MYSQL_ROOT_PASSWORD: root
+    ports:
+     - "3306:3306"
+    restart: unless-stopped
+
